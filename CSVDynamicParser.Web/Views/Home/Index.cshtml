@@ -1,0 +1,173 @@
+@using CSVDynamicParser.ViewModel
+@{
+    ViewBag.Title = "Home Page";
+}
+<link href="~/Content/step/jquery.step.css" rel="stylesheet" />
+<div id="dashboardPage">
+
+    <div class="page-content">
+        <div id="step"></div>
+        <H3 style="margin-top:10px"><span data-bind="text:$root.stepTitle"></span></H3>
+        <hr />
+        @*step one start*@
+        <div class="step-page" data-bind="if:$root.currentStep()==0">
+            <div class="btn btn-success" data-bind="event:{click:addNewConfiguration}">Add</div>
+            <div class="data-list">
+                <div class="row row-header data-row">
+                    <div class="col-md-1 column-item">#</div>
+                    <div class="col-md-4 column-item">Name</div>
+                    <div class="col-md-3 column-item">Data Type</div>
+                    <div class="col-md-2 column-item">Max Length</div>
+                    <div class="col-md-1 column-item">Required</div>
+                    <div class="col-md-1">Operation</div>
+                </div>
+                <div data-bind="if:$root.configurationItems().length>0">
+                    <div data-bind="foreach:configurationItems">
+                        <div class="row data-item-row">
+                            <div class="col-md-1">
+                                <span data-bind="text:$index() + 1"></span>
+                            </div>
+                            <div class="col-md-4">
+                                <input class="form-control" name="name" type="text" data-bind="value: $data.name , validationElement: $data.name" />
+                            </div>
+                            <div class="col-md-3">
+                                <select class="form-control" data-bind="options:$root.dataTypeList, optionsText:'Name' ,optionsValue:'Id',value: $data.dataType"></select>
+                            </div>
+                            <div class="col-md-2">
+                                <input class="form-control" name="size" type="text" data-bind="value: $data.size" />
+                            </div>
+                            <div class="col-md-1">
+                                <input type="checkbox" data-bind="checked:$data.required" />
+                            </div>
+                            <div class="col-md-1">
+                                <i class="fa fa-trash-o fa-lg click-icon" data-bind="event:{click:$root.deleteConfiguration.bind(this,$data)}"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div data-bind="if:$root.configurationItems().length===0">
+                    <div class="row no-data-row data-row">
+                        <div class="col-md-12"> No avaliable configuration data found.</div>
+                    </div>
+                </div>
+            </div>
+            <div class="float-right">
+                <div class="btn btn-info " data-bind="event:{click:$root.nextStepToUploadCSV }">Next</div>
+            </div>
+        </div>
+        @*step one end *@
+        @*step two start*@
+        <div class="step-page" data-bind="if:$root.currentStep()==1">
+            <div class="row">
+                <div class="col-md-5">
+                    <div class="block">
+                        <label class="block-label" for="fileupload" id="file_label">No csv file selected</label>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="block">
+                        <div class="btn_addPic" href="javascript:void(0);" id="fileupload">
+                            Choose File
+                            <button type="button" class="filePrew" id="upload"></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2"><button class="btn btn-success block-btn" style="height:30px;" id="upload_btn">Upload</button></div>
+                <div class="col-md-3"><div class=" block-btn"><input type="checkbox" data-bind="checked:$root.hasHeader,disable:$root.csvHeaders().length>0" /> File has headers</div></div>
+            </div>
+            <div class="row row-header data-row">
+                <div class="col-md-6">Input File</div>
+                <div class="col-md-6">Mapping</div>
+            </div>
+            <div data-bind="if:$root.csvHeaders().length===0">
+                <div class="data-row row-item" style="padding:5px">
+                    Please choose a csv file and click 'Upload' button.
+                </div>
+                <div style="min-height:300px;"></div>
+            </div>
+            <div data-bind="if:$root.csvHeaders().length>0">
+                <div style="min-height:300px;max-height:500px;overflow:auto" data-bind="foreach:{data:$root.csvHeaders,as:'header'}">
+                    <div class="row data-row row-item">
+                        <div class="col-md-6"><span data-bind="text:header.Name"></span></div>
+                        <div class="col-md-6">
+                            <select class="form-control" data-bind="value:header.Value">
+                                <!--ko foreach:{data:$root.configurationItems,as:'$conf'}-->
+                                <option data-bind="text:$conf.name,value:$conf"></option>
+                                <!--/ko-->
+                                <option value="">&lt;skip&gt;</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row" style="margin-top:10px">
+                <div class="col-md-6" style="text-align:left">
+                    <div class="btn btn-info " data-bind="event:{click:$root.prevStep.bind(this,0) }">Prev</div>
+                </div>
+                <div class="col-md-6" style="text-align:right">
+                    <div class="btn btn-info " data-bind="event:{click:$root.nextStepToDataSetResult }">Next</div>
+                </div>
+            </div>
+        </div>
+        @*step two end *@
+        @*step three start*@
+        <div class="step-page" data-bind="if:$root.currentStep()==2">
+            <div class="data-row row-item" style="padding:10px;margin-bottom:10px;">
+                Data Count : <span style="margin-left:10px; font-weight:bold;" data-bind="text:$root.dataSetResult().length"></span>
+            </div>
+            <div style="min-height:300px;max-height:500px;overflow:auto">
+                <table>
+                    <thead>
+                        <tr data-bind="foreach:{data:$root.dataSetHeader,as:'$resultheader'}">
+                            <th class="row-header data-row" style="padding:10px;" data-bind="text:$resultheader">
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody data-bind="foreach:{data:$root.dataSetResult,as:'$datarow'}">
+                        <tr data-bind="foreach:{data:$datarow.values,as:'$rowColumn'}">
+                            <td class="data-row row-item" style="padding:10px;">
+                                <span data-bind="text:$rowColumn"></span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            @*<div class="row row-header data-row" data-bind="foreach:{data:$root.dataSetHeader,as:'$resultheader'}">
+                <div class="col-md-6" data-bind="text:$resultheader"></div>
+            </div>
+            <div data-bind="if:$root.dataSetResult().length>0">
+                <div style="min-height:300px;max-height:500px;overflow:auto" data-bind="foreach:{data:$root.dataSetResult,as:'$datarow'}">
+                    <div class="row data-row row-item">
+                        <!--ko foreach:{data:$datarow.values,as:'$rowColumn'}-->
+                        <div class="col-md-6"><span data-bind="text:$rowColumn"></span></div>
+                        <!--/ko-->
+                    </div>
+                </div>
+            </div>*@
+            <div class="row" style="margin-top:10px">
+                <div class="col-md-6" style="text-align:left">
+                    <div class="btn btn-info " data-bind="event:{click:$root.prevStep.bind(this,1) }">Prev</div>
+                </div>
+            </div>
+        </div>
+        @*step three end *@
+    </div>
+</div>
+@section scripts{
+    <script src="~/Scripts/VMs/common.js"></script>
+    <script src="~/Content/step/jquery.step.min.js"></script>
+    @Html.Script("~/Scripts/VMs/configurableVM.js")
+
+    <script>
+        $(function () {
+            var vm = new ParserVM(
+                {
+                    loadDataTypeUrl: '@Url.Action("GetDataTypeList","Home")',
+                    uploadFileUrl: '@Url.Action("UploadCSVFile","Home")',
+                    convertCSVUrl:"@Url.Action("ConvertCSVToDatatable","Home")"
+                });
+            ko.applyBindings(vm, $('#dashboardPage')[0]);
+            vm.init();
+        });
+    </script>
+}

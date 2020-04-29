@@ -1,0 +1,172 @@
+body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+ /*home*/
+.navbar-color {
+    background-color: #007fff;
+    border-color: #0066cc;
+}
+.navbar-header-color{
+    color:white !important;
+}
+.row-header {
+    margin-top: 10px;
+    padding:10px 0;
+    border: 1px solid rgba(86,61,124,.2);
+    background-color: rgba(86,61,124,.15);
+}
+.column-item {
+    border-right: 1px solid rgba(86,61,124,.2);
+}
+.row-item {
+   border: 1px solid rgba(86,61,124,.2);
+   padding-top:10px;
+}
+.no-data-row {
+    padding: 10px 0;
+    border: 1px solid rgba(86,61,124,.2);
+    background-color: white;
+}
+.page-content{
+    margin-top:80px;
+    min-height:600px;
+}
+.data-row {
+    margin-top: 5px;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+.data-item-row {
+    border: 1px solid rgba(86,61,124,.2);
+    margin-top: 5px;
+    padding:5px 0;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+.error{
+    border:1px solid red;
+}
+.click-icon{
+    cursor:pointer;
+}
+.click-icon:hover {
+    color:red;
+}
+
+.float-right{
+   text-align:right;
+}
+.data-list{
+    min-height:400px;
+}
+/*upload control*/
+.file {
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.block {
+    margin-bottom: 30px;
+    margin-top: 20px;
+    height: 30px;
+    line-height: 30px;
+}
+.block-btn {
+    margin-bottom: 30px;
+    margin-top: 20px;
+    height: 30px;
+}
+    .block span {
+        display: inline-block;
+        width: 100px;
+        text-align: left;
+        font-size: 14px;
+        float: left;
+        margin-right: 15px;
+    }
+
+    .block input {
+        background: #363738;
+        height: 30px;
+        width: 300px;
+        border: #363738;
+        color: #ffffff;
+        padding-left: 15px;
+    }
+
+    .block .block-label {
+        width: 420px;
+        height: 30px;
+        background: #dad9d9;
+        margin: 0;
+        float: left;
+        padding-left: 15px;
+        color: black;
+        color:#707070;
+    }
+
+.btn_addPic {
+    display: inline-block;
+    position: relative;
+    width: 90px;
+    height: 30px;
+    overflow: hidden;
+    border: 1px solid #64BD2E;
+    background: #64BD2E;
+    color: white;
+    cursor: pointer;
+    text-align: center;
+    font-size: 14px;
+    text-decoration: none;
+    border-radius: 5px
+}
+
+.block a {
+    text-decoration: none;
+    cursor: pointer;
+    color: white;
+}
+.block input{
+    cursor: pointer;
+}
+    .btn_addPic:hover {
+        cursor: pointer;
+    }
+
+.filePrew {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 140px;
+    height: 39px;
+    font-size: 100px;
+    opacity: 0;
+    cursor:pointer;
+    filter: alpha(opacity=0);
+    /* IE */
+}
+

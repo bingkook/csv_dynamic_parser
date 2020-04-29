@@ -1,0 +1,12 @@
+CSVDynamicParser.Common/obj/
+CSVDynamicParser.Core/bin/
+CSVDynamicParser.Core/obj/
+CSVDynamicParser.Servies/bin/
+CSVDynamicParser.Servies/obj/
+CSVDynamicParser.ViewModel/obj/
+CSVDynamicParser.Web/.vs/
+CSVDynamicParser.Web/bin/
+packages/
+CSVDynamicParser.Web/obj/
+CSVDynamicParser.Web.Tests/obj/
+.vs/

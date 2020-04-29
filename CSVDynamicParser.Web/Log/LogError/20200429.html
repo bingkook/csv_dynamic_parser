@@ -1,0 +1,112 @@
+<HR COLOR=red>
+Exception Date:2020-04-29 17:27:46,868 [11] <BR>
+Exception Level:ERROR <BR>
+Class:logerror [(null)] <BR>
+UploadCSVFile Failed <BR>
+ <HR Size=1>System.Data.NoNullAllowedException: Column 'IncidentAddress' does not allow nulls.
+   at System.Data.DataColumn.CheckNullable(DataRow row)
+   at System.Data.DataTable.RaiseRowChanging(DataRowChangeEventArgs args, DataRow eRow, DataRowAction eAction, Boolean fireEvent)
+   at System.Data.DataTable.SetNewRecordWorker(DataRow row, Int32 proposedRecord, DataRowAction action, Boolean isInMerge, Boolean suppressEnsurePropertyChanged, Int32 position, Boolean fireEvent, Exception& deferredException)
+   at System.Data.DataTable.InsertRow(DataRow row, Int64 proposedID, Int32 pos, Boolean fireEvent)
+   at System.Data.DataRowCollection.Add(DataRow row)
+   at CSVDynamicParser.Servies.Implements.FileService.ConvertCSVResult(CSVConvertParameter parameter) in D:\Project Code\Demo\DevelopingIT\csv_dynamic_parser\CSVDynamicParser.Servies\Implements\FileService.cs:line 142
+   at CSVDynamicParser.Web.Controllers.HomeController.ConvertCSVToDatatable(CSVConvertParameter para) in D:\Project Code\Demo\DevelopingIT\csv_dynamic_parser\CSVDynamicParser.Web\Controllers\HomeController.cs:line 102
+<HR COLOR=red>
+Exception Date:2020-04-29 17:56:22,355 [10] <BR>
+Exception Level:ERROR <BR>
+Class:logerror [(null)] <BR>
+UploadCSVFile Failed <BR>
+ <HR Size=1>CSVDynamicParser.Common.Exceptions.ParseException: The length of Column 2 is larger the configuration value : 2 
+   at CSVDynamicParser.Servies.Implements.FileService.PopulateRow(CSVConvertParameter parameter, CsvRow row, Dictionary`2 columnMap, DataRow dr, Int32 rowIndex) in D:\Project Code\Demo\DevelopingIT\csv_dynamic_parser\CSVDynamicParser.Servies\Implements\FileService.cs:line 120
+   at CSVDynamicParser.Servies.Implements.FileService.ConvertCSVResult(CSVConvertParameter parameter) in D:\Project Code\Demo\DevelopingIT\csv_dynamic_parser\CSVDynamicParser.Servies\Implements\FileService.cs:line 199
+   at CSVDynamicParser.Web.Controllers.HomeController.ConvertCSVToDatatable(CSVConvertParameter para) in D:\Project Code\Demo\DevelopingIT\csv_dynamic_parser\CSVDynamicParser.Web\Controllers\HomeController.cs:line 102
+<HR COLOR=red>
+Exception Date:2020-04-29 17:57:04,392 [10] <BR>
+Exception Level:ERROR <BR>
+Class:logerror [(null)] <BR>
+UploadCSVFile Failed <BR>
+ <HR Size=1>CSVDynamicParser.Common.Exceptions.ParseException: The length of Column 2 is larger the configuration value : 2 
+   at CSVDynamicParser.Servies.Implements.FileService.PopulateRow(CSVConvertParameter parameter, CsvRow row, Dictionary`2 columnMap, DataRow dr, Int32 rowIndex) in D:\Project Code\Demo\DevelopingIT\csv_dynamic_parser\CSVDynamicParser.Servies\Implements\FileService.cs:line 120
+   at CSVDynamicParser.Servies.Implements.FileService.ConvertCSVResult(CSVConvertParameter parameter) in D:\Project Code\Demo\DevelopingIT\csv_dynamic_parser\CSVDynamicParser.Servies\Implements\FileService.cs:line 199
+   at CSVDynamicParser.Web.Controllers.HomeController.ConvertCSVToDatatable(CSVConvertParameter para) in D:\Project Code\Demo\DevelopingIT\csv_dynamic_parser\CSVDynamicParser.Web\Controllers\HomeController.cs:line 102
+<HR COLOR=red>
+Exception Date:2020-04-29 18:00:26,638 [11] <BR>
+Exception Level:ERROR <BR>
+Class:logerror [(null)] <BR>
+UploadCSVFile Failed <BR>
+ <HR Size=1>CSVDynamicParser.Common.Exceptions.ParseException: The Column 2 can't be parsed to : Int32 
+   at CSVDynamicParser.Servies.Implements.FileService.PopulateRow(CSVConvertParameter parameter, CsvRow row, Dictionary`2 columnMap, DataRow dr, Int32 rowIndex) in D:\Project Code\Demo\DevelopingIT\csv_dynamic_parser\CSVDynamicParser.Servies\Implements\FileService.cs:line 137
+   at CSVDynamicParser.Servies.Implements.FileService.ConvertCSVResult(CSVConvertParameter parameter) in D:\Project Code\Demo\DevelopingIT\csv_dynamic_parser\CSVDynamicParser.Servies\Implements\FileService.cs:line 199
+   at CSVDynamicParser.Web.Controllers.HomeController.ConvertCSVToDatatable(CSVConvertParameter para) in D:\Project Code\Demo\DevelopingIT\csv_dynamic_parser\CSVDynamicParser.Web\Controllers\HomeController.cs:line 102
+<HR COLOR=red>
+Exception Date:2020-04-29 18:00:44,979 [11] <BR>
+Exception Level:ERROR <BR>
+Class:logerror [(null)] <BR>
+UploadCSVFile Failed <BR>
+ <HR Size=1>CSVDynamicParser.Common.Exceptions.ParseException: The Column 2 can't be parsed to : Int32 
+   at CSVDynamicParser.Servies.Implements.FileService.PopulateRow(CSVConvertParameter parameter, CsvRow row, Dictionary`2 columnMap, DataRow dr, Int32 rowIndex) in D:\Project Code\Demo\DevelopingIT\csv_dynamic_parser\CSVDynamicParser.Servies\Implements\FileService.cs:line 137
+   at CSVDynamicParser.Servies.Implements.FileService.ConvertCSVResult(CSVConvertParameter parameter) in D:\Project Code\Demo\DevelopingIT\csv_dynamic_parser\CSVDynamicParser.Servies\Implements\FileService.cs:line 199
+   at CSVDynamicParser.Web.Controllers.HomeController.ConvertCSVToDatatable(CSVConvertParameter para) in D:\Project Code\Demo\DevelopingIT\csv_dynamic_parser\CSVDynamicParser.Web\Controllers\HomeController.cs:line 102
+<HR COLOR=red>
+Exception Date:2020-04-29 18:02:06,067 [11] <BR>
+Exception Level:ERROR <BR>
+Class:logerror [(null)] <BR>
+UploadCSVFile Failed <BR>
+ <HR Size=1>CSVDynamicParser.Common.Exceptions.ParseException: The Column 2 can't be parsed to : Decimal 
+   at CSVDynamicParser.Servies.Implements.FileService.PopulateRow(CSVConvertParameter parameter, CsvRow row, Dictionary`2 columnMap, DataRow dr, Int32 rowIndex) in D:\Project Code\Demo\DevelopingIT\csv_dynamic_parser\CSVDynamicParser.Servies\Implements\FileService.cs:line 151
+   at CSVDynamicParser.Servies.Implements.FileService.ConvertCSVResult(CSVConvertParameter parameter) in D:\Project Code\Demo\DevelopingIT\csv_dynamic_parser\CSVDynamicParser.Servies\Implements\FileService.cs:line 199
+   at CSVDynamicParser.Web.Controllers.HomeController.ConvertCSVToDatatable(CSVConvertParameter para) in D:\Project Code\Demo\DevelopingIT\csv_dynamic_parser\CSVDynamicParser.Web\Controllers\HomeController.cs:line 102
+<HR COLOR=red>
+Exception Date:2020-04-29 18:09:23,675 [10] <BR>
+Exception Level:ERROR <BR>
+Class:logerror [(null)] <BR>
+UploadCSVFile Failed <BR>
+ <HR Size=1>CSVDynamicParser.Common.Exceptions.ParseException: The Column 2 can't be parsed to : Int32 
+   at CSVDynamicParser.Servies.Implements.FileService.PopulateRow(CSVConvertParameter parameter, CsvRow row, Dictionary`2 columnMap, DataRow dr, Int32 rowIndex) in D:\Project Code\Demo\DevelopingIT\csv_dynamic_parser\CSVDynamicParser.Servies\Implements\FileService.cs:line 137
+   at CSVDynamicParser.Servies.Implements.FileService.ConvertCSVResult(CSVConvertParameter parameter) in D:\Project Code\Demo\DevelopingIT\csv_dynamic_parser\CSVDynamicParser.Servies\Implements\FileService.cs:line 199
+   at CSVDynamicParser.Web.Controllers.HomeController.ConvertCSVToDatatable(CSVConvertParameter para) in D:\Project Code\Demo\DevelopingIT\csv_dynamic_parser\CSVDynamicParser.Web\Controllers\HomeController.cs:line 103
+<HR COLOR=red>
+Exception Date:2020-04-29 18:11:19,863 [11] <BR>
+Exception Level:ERROR <BR>
+Class:logerror [(null)] <BR>
+UploadCSVFile Failed <BR>
+ <HR Size=1>CSVDynamicParser.Common.Exceptions.ParseException: The Column 2 can't be parsed to : Int32 
+   at CSVDynamicParser.Servies.Implements.FileService.PopulateRow(CSVConvertParameter parameter, CsvRow row, Dictionary`2 columnMap, DataRow dr, Int32 rowIndex) in D:\Project Code\Demo\DevelopingIT\csv_dynamic_parser\CSVDynamicParser.Servies\Implements\FileService.cs:line 137
+   at CSVDynamicParser.Servies.Implements.FileService.ConvertCSVResult(CSVConvertParameter parameter) in D:\Project Code\Demo\DevelopingIT\csv_dynamic_parser\CSVDynamicParser.Servies\Implements\FileService.cs:line 199
+   at CSVDynamicParser.Web.Controllers.HomeController.ConvertCSVToDatatable(CSVConvertParameter para) in D:\Project Code\Demo\DevelopingIT\csv_dynamic_parser\CSVDynamicParser.Web\Controllers\HomeController.cs:line 103
+<HR COLOR=red>
+Exception Date:2020-04-29 18:14:15,489 [13] <BR>
+Exception Level:ERROR <BR>
+Class:logerror [(null)] <BR>
+UploadCSVFile Failed <BR>
+ <HR Size=1>CSVDynamicParser.Common.Exceptions.ParseException: The Column 2 can't be parsed to : Decimal 
+   at CSVDynamicParser.Servies.Implements.FileService.PopulateRow(CSVConvertParameter parameter, CsvRow row, Dictionary`2 columnMap, DataRow dr, Int32 rowIndex) in D:\Project Code\Demo\DevelopingIT\csv_dynamic_parser\CSVDynamicParser.Servies\Implements\FileService.cs:line 151
+   at CSVDynamicParser.Servies.Implements.FileService.ConvertCSVResult(CSVConvertParameter parameter) in D:\Project Code\Demo\DevelopingIT\csv_dynamic_parser\CSVDynamicParser.Servies\Implements\FileService.cs:line 199
+   at CSVDynamicParser.Web.Controllers.HomeController.ConvertCSVToDatatable(CSVConvertParameter para) in D:\Project Code\Demo\DevelopingIT\csv_dynamic_parser\CSVDynamicParser.Web\Controllers\HomeController.cs:line 103
+<HR COLOR=red>
+Exception Date:2020-04-29 18:16:01,014 [12] <BR>
+Exception Level:ERROR <BR>
+Class:logerror [(null)] <BR>
+UploadCSVFile Failed <BR>
+ <HR Size=1>CSVDynamicParser.Common.Exceptions.ParseException: The Column 2 can't be parsed to : Decimal 
+   at CSVDynamicParser.Servies.Implements.FileService.PopulateRow(CSVConvertParameter parameter, CsvRow row, Dictionary`2 columnMap, DataRow dr, Int32 rowIndex) in D:\Project Code\Demo\DevelopingIT\csv_dynamic_parser\CSVDynamicParser.Servies\Implements\FileService.cs:line 151
+   at CSVDynamicParser.Servies.Implements.FileService.ConvertCSVResult(CSVConvertParameter parameter) in D:\Project Code\Demo\DevelopingIT\csv_dynamic_parser\CSVDynamicParser.Servies\Implements\FileService.cs:line 199
+   at CSVDynamicParser.Web.Controllers.HomeController.ConvertCSVToDatatable(CSVConvertParameter para) in D:\Project Code\Demo\DevelopingIT\csv_dynamic_parser\CSVDynamicParser.Web\Controllers\HomeController.cs:line 103
+<HR COLOR=red>
+Exception Date:2020-04-29 18:17:03,878 [12] <BR>
+Exception Level:ERROR <BR>
+Class:logerror [(null)] <BR>
+UploadCSVFile Failed <BR>
+ <HR Size=1>CSVDynamicParser.Common.Exceptions.ParseException: The Column 2 can't be parsed to : Decimal 
+   at CSVDynamicParser.Servies.Implements.FileService.PopulateRow(CSVConvertParameter parameter, CsvRow row, Dictionary`2 columnMap, DataRow dr, Int32 rowIndex) in D:\Project Code\Demo\DevelopingIT\csv_dynamic_parser\CSVDynamicParser.Servies\Implements\FileService.cs:line 151
+   at CSVDynamicParser.Servies.Implements.FileService.ConvertCSVResult(CSVConvertParameter parameter) in D:\Project Code\Demo\DevelopingIT\csv_dynamic_parser\CSVDynamicParser.Servies\Implements\FileService.cs:line 199
+   at CSVDynamicParser.Web.Controllers.HomeController.ConvertCSVToDatatable(CSVConvertParameter para) in D:\Project Code\Demo\DevelopingIT\csv_dynamic_parser\CSVDynamicParser.Web\Controllers\HomeController.cs:line 103
+<HR COLOR=red>
+Exception Date:2020-04-29 18:17:32,465 [12] <BR>
+Exception Level:ERROR <BR>
+Class:logerror [(null)] <BR>
+UploadCSVFile Failed <BR>
+ <HR Size=1>CSVDynamicParser.Common.Exceptions.ParseException: The Column 2 can't be parsed to : Decimal 
+   at CSVDynamicParser.Servies.Implements.FileService.PopulateRow(CSVConvertParameter parameter, CsvRow row, Dictionary`2 columnMap, DataRow dr, Int32 rowIndex) in D:\Project Code\Demo\DevelopingIT\csv_dynamic_parser\CSVDynamicParser.Servies\Implements\FileService.cs:line 151
+   at CSVDynamicParser.Servies.Implements.FileService.ConvertCSVResult(CSVConvertParameter parameter) in D:\Project Code\Demo\DevelopingIT\csv_dynamic_parser\CSVDynamicParser.Servies\Implements\FileService.cs:line 199
+   at CSVDynamicParser.Web.Controllers.HomeController.ConvertCSVToDatatable(CSVConvertParameter para) in D:\Project Code\Demo\DevelopingIT\csv_dynamic_parser\CSVDynamicParser.Web\Controllers\HomeController.cs:line 103
