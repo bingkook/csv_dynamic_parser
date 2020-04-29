@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Web.Mvc;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using CSVDynamicParser.Web;
-using CSVDynamicParser.Web.Controllers;
+using CSVDynamicParser;
+using CSVDynamicParser.Controllers;
 
-namespace CSVDynamicParser.Web.Tests.Controllers
+namespace CSVDynamicParser.Tests.Controllers
 {
     [TestClass]
     public class HomeControllerTest
