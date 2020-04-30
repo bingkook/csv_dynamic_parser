@@ -28,13 +28,13 @@
                                 <span data-bind="text:$index() + 1"></span>
                             </div>
                             <div class="col-md-4">
-                                <input class="form-control" name="name" type="text" data-bind="value: $data.name , validationElement: $data.name" />
+                                <input class="form-control" name="name" type="text" onkeyup="this.value=this.value.replace(/[^\w_]/g,'');" data-bind="value: $data.name , validationElement: $data.name" />
                             </div>
                             <div class="col-md-3">
                                 <select class="form-control" data-bind="options:$root.dataTypeList, optionsText:'Name' ,optionsValue:'Id',value: $data.dataType"></select>
                             </div>
                             <div class="col-md-2">
-                                <input class="form-control" name="size" type="text" data-bind="value: $data.size" />
+                                <input class="form-control" name="size" type="text" onkeyup="this.value=this.value.replace(/\D/g,'')" data-bind="value: $data.size" />
                             </div>
                             <div class="col-md-1">
                                 <input type="checkbox" data-bind="checked:$data.required" />
