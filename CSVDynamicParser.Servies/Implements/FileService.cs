@@ -81,12 +81,7 @@ namespace CSVDynamicParser.Servies.Implements
                 {
                     column.MaxLength = mapped.Value.size;
                 }
-                string sColumnValue = sColumn;
-                if (!parameter.HasHeader)
-                {
-                    sColumnValue = $"column{index + 1}";
-                }
-                column.ColumnName = sColumnValue;
+                column.ColumnName = mapped.Value.name;
             }
             return column;
         }
