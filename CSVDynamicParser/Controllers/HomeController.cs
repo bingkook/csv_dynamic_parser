@@ -115,6 +115,11 @@ namespace CSVDynamicParser.Web.Controllers
             catch (Exception e)
             {
                 result.ok = false;
+                result.error = new ParseExceptionParameter()
+                {
+                    columnIndex=0,
+                    rowIndex=0
+                };
                 result.message = e.Message;
                 LogHelper.LogException("UploadCSVFile Failed", e);
             }

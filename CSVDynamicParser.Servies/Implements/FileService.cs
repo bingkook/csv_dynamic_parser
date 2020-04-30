@@ -77,7 +77,7 @@ namespace CSVDynamicParser.Servies.Implements
                 }
                 column.DataType = Type.GetType($"System.{type}");
                 column.AllowDBNull = !mapped.Value.required;
-                if (mapped.Value.size > 0)
+                if (mapped.Value.size > 0 && mapped.Value.dataType == DataTypeEnum.String)
                 {
                     column.MaxLength = mapped.Value.size;
                 }
