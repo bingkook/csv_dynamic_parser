@@ -72,8 +72,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-2"><button class="btn btn-success block-btn" style="height:30px;" id="upload_btn">Upload</button></div>
-                <div class="col-md-3"><div class=" block-btn"><input type="checkbox" data-bind="checked:$root.hasHeader,disable:$root.csvHeaders().length>0" /> File has headers</div></div>
+                <div class="col-md-2"><button class="btn btn-success block-btn" style="height:30px;" data-bind="event:{click:$root.onUpload}" id="upload_btn">Upload</button></div>
+                <div class="col-md-3"><div class=" block-btn"><input type="checkbox" id="hasHeader" data-bind="checked:$root.hasHeader,disable:$root.csvHeaders().length>0" /> File has headers</div></div>
             </div>
             <div class="row row-header data-row">
                 <div class="col-md-6">Input File</div>
@@ -132,18 +132,6 @@
                     </tbody>
                 </table>
             </div>
-            @*<div class="row row-header data-row" data-bind="foreach:{data:$root.dataSetHeader,as:'$resultheader'}">
-                <div class="col-md-6" data-bind="text:$resultheader"></div>
-            </div>
-            <div data-bind="if:$root.dataSetResult().length>0">
-                <div style="min-height:300px;max-height:500px;overflow:auto" data-bind="foreach:{data:$root.dataSetResult,as:'$datarow'}">
-                    <div class="row data-row row-item">
-                        <!--ko foreach:{data:$datarow.values,as:'$rowColumn'}-->
-                        <div class="col-md-6"><span data-bind="text:$rowColumn"></span></div>
-                        <!--/ko-->
-                    </div>
-                </div>
-            </div>*@
             <div class="row" style="margin-top:10px">
                 <div class="col-md-6" style="text-align:left">
                     <div class="btn btn-info " data-bind="event:{click:$root.prevStep.bind(this,1) }">Prev</div>

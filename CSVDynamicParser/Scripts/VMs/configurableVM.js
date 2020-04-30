@@ -29,6 +29,7 @@ function ParserVM(para) {
     };
     self.dataTypeList = ko.observableArray([]);
     self.csvId = ko.observable("");
+    self.uploadInst = null;
     self.csvHeaders = ko.observableArray([]);
     self.hasHeader = ko.observable(true);
     self.dataSetHeader = ko.observableArray([]);
@@ -48,7 +49,7 @@ function ParserVM(para) {
         if (self.currentStep() === 2) {
             return self.stepTitleArray.step3;
         }
-    },this);
+    }, this);
     // abservable fields defination
     self.configurationItems = ko.observableArray([]);
     // init load for the vm
@@ -75,12 +76,12 @@ function ParserVM(para) {
             data: formdata,
             contentType: false,
             processData: false,
-            success:(data) => {
+            success: (data) => {
 
             },
-             error:(data, timeout, err) => {
+            error: (data, timeout, err) => {
 
-             }
+            }
         });
     };
 
@@ -119,6 +120,19 @@ function ParserVM(para) {
         self.configurationItems(leftItems);
     };
 
+    self.onUpload = function () {
+        console.log(self.hasHeader());
+        if (self.uploadInst !== null) {
+            self.uploadInst.reload(
+                {
+                    data: {
+                        hasHeader: self.hasHeader()
+                    }
+                });
+            self.uploadInst.upload();
+        }
+    };
+
     self.prevStep = function (index) {
         self.step.prevStep();
         self.currentStep(index);
@@ -142,25 +156,24 @@ function ParserVM(para) {
                     btn: [],
                     content: 'Please fill the required fields.'
                 });
-            }); 
+            });
         }
         else {
             self.step.nextStep();
             self.currentStep(1);
             layui.use('upload', function () {
                 var upload = layui.upload;
-                var uploadInst = upload.render({
-                    elem: $('#upload') 
+                self.uploadInst = upload.render({
+                    elem: $('#upload')
                     , url: self.uploadFileUrl,
                     auto: false,
                     data: {
-                        hasHeader: self.hasHeader()
+                        hasHeader: $("#hasHeader").prop("checked")
                     },
-                    accept:"file",
+                    accept: "file",
                     acceptMime: ".csv",
-                    exts:"csv",
-                    bindAction:"#upload_btn"
-                    , choose: function (obj) {
+                    exts: "csv",
+                    choose: function (obj) {
                         obj.preview(function (index, file, result) {
                             $("#file_label").html(file.name);
                         });
@@ -176,7 +189,7 @@ function ParserVM(para) {
                         console.log(res);
                     }
                     , error: function () {
-                        layer.closeAll('loading'); 
+                        layer.closeAll('loading');
                         //请求异常回调
                     }
                 });
@@ -187,7 +200,7 @@ function ParserVM(para) {
     self.nextStepToDataSetResult = function () {
         var headerJson = convertToJson(self.csvHeaders());
         // validation
-      var allNull=  _.every(headerJson, function (item) { return item.Value === null;});
+        var allNull = _.every(headerJson, function (item) { return item.Value === null; });
         if (allNull) {
             layui.use('layer', function () {
                 var layer = layui.layer;
@@ -228,8 +241,8 @@ function ParserVM(para) {
                             var layer = layui.layer;
                             layer.open({
                                 title: 'Parse Error',
-                                btn:["OK"],
-                                content: "<div>" + res.message + "</div>" + "<div style='margin-top:10px;'><ul><li><b>Column Index</b>:" + res.error.columnIndex + "</li><li><b>Row Index</b>:" + res.error.rowIndex + "</li><li><b>Row Data</b>:" + res.error.csv +"</li></ul>"
+                                btn: ["OK"],
+                                content: "<div>" + res.message + "</div>" + "<div style='margin-top:10px;'><ul><li><b>Column Index</b>:" + res.error.columnIndex + "</li><li><b>Row Index</b>:" + res.error.rowIndex + "</li><li><b>Row Data</b>:" + res.error.csv + "</li></ul>"
                             });
                         });
                     }
